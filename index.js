@@ -10,7 +10,7 @@ const mytoken=process.env.MYTOKEN;
 const app=express().use(body_parser.json());
 
 
-app.listen(8000 || process.env.PORT, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log("HELLLLLOOOO JOVINNNN");
     console.log("creating webhook");
 });
