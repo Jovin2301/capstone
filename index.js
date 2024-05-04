@@ -44,7 +44,7 @@ app.post("/webhook", (req,res)=>{
             body_para.entry[0].changes[0].value.messages[0] 
             ){
                 let phone_num_id = body.entry[0].changes[0].value.metadata.phone_number_id; //getting the phonee_number_id
-                let from = body.entry[0].changes[0].value.messages[0]/from;
+                let from = body.entry[0].changes[0].value.messages[0].from;
                 let msg_body = body.entry[0].changes[0].value.messages[0].text.body;
                 
                 axios({
