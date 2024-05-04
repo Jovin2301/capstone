@@ -1,6 +1,5 @@
 const express = require("express");
 const body_parser = require("body-parser");
-const bodyParser = require("body-parser");
 const axios = require("axios");
 require('dotenv').config();
 
@@ -15,8 +14,8 @@ app.listen(process.env.PORT, ()=>{
     console.log("creating webhook");
 });
 
-//to verify the callback url from dasboard side => cloud api side
-app.get("/webhook", (req, res)=>{
+//to verify the callback url from dashboard side => cloud api side
+app.get("/webhook", (req,res)=>{
     let mode= req.query["hub.mode"];
     let challenge = req.query["hub.challenge"];
     let token = req.query["hub.verify_token"];
