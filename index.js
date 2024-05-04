@@ -40,8 +40,8 @@ app.post("/webhook", (req,res)=>{
     if (body_para.object){
         if(body_para.entry && 
             body_para.entry[0].changes && 
-            body_para.entry[0].changes[0].value.message &&
-            body_para.entry[0].changes[0].value.message[0] 
+            body_para.entry[0].changes[0].value.messages &&
+            body_para.entry[0].changes[0].value.messages[0] 
             ){
                 let phone_num_id = body.entry[0].changes[0].value.metadata.phone_number_id; //getting the phonee_number_id
                 let from = body.entry[0].changes[0].value.messages[0].from;
