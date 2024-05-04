@@ -32,7 +32,7 @@ app.get("/webhook", (req, res)=>{
     }
 });
 
-app.post("\webhook", (req,res)=>{
+app.post("/webhook", (req,res)=>{
     let body_para = req.body;
 
     console.log(JSON.stringify(body_para, null, 2));
