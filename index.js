@@ -70,6 +70,6 @@ app.post("/webhook", (req,res)=>{
     }
 )
 
-app.get("/",(req,res)=>{
+app.get("/webhook",(req,res)=>{
     res.status(200).send("hello this is webhook setup");
 });
