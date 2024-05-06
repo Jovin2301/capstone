@@ -36,7 +36,7 @@ app.get("/webhook", (req, res) => {
 // Route for receiving webhook events
 app.post("/webhook", (req, res) => {
     console.log("Received webhook event:");
-    console.log(req.body);
+    console.log(req.body, "hello");
 
     const { entry } = req.body;
     if (!entry || !entry[0] || !entry[0].changes || !entry[0].changes[0]) {
