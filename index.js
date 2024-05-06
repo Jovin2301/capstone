@@ -54,7 +54,7 @@ app.post("/webhook", (req, res) => {
     const { phone_number_id } = metadata;
     const { from, text } = messages[0];
     console.log('metadata', metadata);
-    
+    console.log("messages:", messages);
     console.log("Phone number ID:", metadata);
     console.log("Sender:", from);
     console.log("Message:", text.body);
