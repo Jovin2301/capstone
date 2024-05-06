@@ -51,14 +51,14 @@ app.post("/webhook", (req, res) => {
     }
 
     const { metadata, messages } = change.value;
-    const { phone_number_id } = metadata;
+    const { phone_number_id } = change[0];
     const { from, text } = messages[0];
     console.log("Phone number ID:", phone_number_id);
     console.log("Sender:", from);
     console.log("Message:", text.body);
     //https://graph.facebook.com/v19.0/me/messages?access_token=${token}`
     //`https://graph.facebook.com/v19.0/${phone_number_id}/messages?access_token=${token}`
-    axios.post(`https://graph.facebook.com/v19.0/me/messages?access_token=${token}`, {
+    axios.post(`https://graph.facebook.com/v19.0/${phone_number_id}/messages?access_token=${token}`, {
         messaging_product: "whatsapp",
         messaging_type: "RESPONSE",
         to: from,
