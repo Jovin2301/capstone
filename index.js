@@ -53,22 +53,16 @@ app.post("/webhook", (req, res) => {
     const { metadata, messages } = change.value;
     const { phone_number_id } = metadata;
     const { from, text } = messages[0];
-    console.log('metadata', metadata);
-    console.log("messages:", messages);
+    
     console.log("Phone number ID:", metadata);
     console.log("Sender:", from);
     console.log("Message:", text.body);
     //https://graph.facebook.com/v19.0/me/messages?access_token=${token}`
     //`https://graph.facebook.com/v19.0/${phone_number_id}/messages?access_token=${token}`
-    // axios.post(`https://graph.facebook.com/v19.0/${phone_number_id}/messages?access_token=${token}`, {
-    //     messaging_product: "whatsapp",
-    //     to: from,
-    //     text: { body: "Hello jovin" + text.body }
-    // })
-    axios.post(`https://graph.facebook.com/v19.0/me/messages?access_token=${token}`, {
-    messaging_type: "RESPONSE",
-    recipient: { phone_number: from },
-    message: { text: "Hello jovin " + text.body }
+    axios.post(`https://graph.facebook.com/v19.0/${metadata}/messages?access_token=${token}`, {
+        messaging_product: "whatsapp",
+        to: from,
+        text: { body: "Hello jovin" + text.body }
     })
     .then(response => {
         console.log("Message sent successfully");
