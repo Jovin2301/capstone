@@ -52,7 +52,8 @@ app.post("/webhook", (req, res) => {
 
     const { metadata, messages } = change.value;
     const { phone_number_id } = metadata;
-    console.log("metadata", metadata);
+    console.log("metadata info", metadata);
+    console.log("What is within messages", messages);
     const { from, text } = messages[0];
     
     console.log("Phone number ID:", phone_number_id);
