@@ -60,15 +60,16 @@ app.post("/webhook", (req, res) => {
     //https://graph.facebook.com/v19.0/me/messages?access_token=${token}`
     //`https://graph.facebook.com/v19.0/${phone_number_id}/messages?access_token=${token}`
       
-
+    
+    
     axios.post(`https://graph.facebook.com/v19.0/${phone_number_id}/messages?access_token=${token}`, {
         messaging_product: "whatsapp",
         to: from,
-        text: { body: "Hello jovin "+ text.body },
-        type: "template", 
-        template: { 
-            name: "account_creation_confirmation_2", 
-            language: {"code": "en_US" } 
+        text: { body: "Hello jovin "+ text.body }
+        // type: "template", 
+        // template: { 
+        //     name: "account_creation_confirmation_2", 
+        //     language: {"code": "en_US" } 
         }
     })
     .then(response => {
