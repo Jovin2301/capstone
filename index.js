@@ -69,8 +69,8 @@ app.post("/webhook", (req, res) => {
         // type: "template", 
         // template: { 
         //     name: "account_creation_confirmation_2", 
-        //     language: {"code": "en_US" } 
-        }
+        //     language: {"code": "en_US" }
+            //}
     })
     .then(response => {
         console.log("Message sent successfully");
