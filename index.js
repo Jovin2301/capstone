@@ -70,7 +70,7 @@ app.post("/webhook", (req, res) => {
         template: { 
             name: "account_creation_confirmation_2", 
             language: {
-                "code": "en_US"
+                code: "en_US"
             }
         }
     })
