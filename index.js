@@ -88,7 +88,7 @@ app.post("/webhook", (req, res) => {
             "language": {
                 "code": "en_US"
             }
-        }
+        }}
     })
     .then(response => {
         console.log("Message sent successfully");
