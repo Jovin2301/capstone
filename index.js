@@ -59,7 +59,7 @@ app.post("/webhook", (req, res) => {
     console.log("Message: h2", text.body);
     //https://graph.facebook.com/v19.0/me/messages?access_token=${token}`
     //`https://graph.facebook.com/v19.0/${phone_number_id}/messages?access_token=${token}`
-      
+    const sendTextMessage = false;
     const messagePayload = sendTextMessage ? {
         messaging_product: "whatsapp",
         to: from,
