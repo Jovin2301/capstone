@@ -83,7 +83,7 @@ app.post("/webhook", (req, res) => {
             type: "template", 
             template: { 
                 name: "account_creation_confirmation_2", 
-                "language": {
+                language: {
                     "code": "en_US"
                 }
             }} 
